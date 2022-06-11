@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>My Information</title>
+{% endblock %}
+
+{% block content %}
+<form method="POST"> {% csrf_token %}
+    {{owner_form.as_p}}
+    <div class="btn-container">
+        <button class="btn btn-succces" id="redirect-btn">
+           Save
+        </button>
+    </div>
+</form>
+{% endblock %}
