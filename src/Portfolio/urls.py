@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from Owner.views import home_Page_View
+#from Owner.views import home_Page_View
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_Page_View, name="Home-Page"),
-    path('about/', include('Owner.urls'))
+    path('', include('Pages.urls')),
 ]
