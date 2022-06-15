@@ -1,0 +1,119 @@
+.sidebar {
+    margin: 0;
+    padding-top: 15%;
+    width: 17%;
+    background-color: rgb(49, 42, 42);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar a {
+    display: block;
+    color: rgb(23, 235, 23);
+    padding: 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+    
+.sidebar a.active {background-color: #04AA6D;color: white;}
+
+.sidebar a:hover:not(.active) {background-color: green;color: black;}
+
+i p{float: right}
+
+#stick-low{
+    /*margin-top: 60.6%;*/
+    position: absolute;
+    background-color: #04AA6D;
+    color: black;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+} 
+
+div.main-content {
+    /*margin-left: 200px;*/
+    margin-left: 25%;
+    padding: 1px 16px;
+    height: 1000px; 
+}
+
+body{background-color: rgb(250, 229, 204);}
+
+#name{color: rgb(148, 148, 238);}
+
+mark{background-color: rgb(226, 226, 24);}
+
+#intro {
+    margin-right: 6%; 
+    margin-left: 4%;
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: large;
+    
+}
+
+div.btn-container{ padding-top: 10%;}
+
+#redirect-btn{
+    background-color: rgb(24, 161, 24);
+    width: 20%;
+    height: 50px;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+#redirect-btn a{color: black; text-decoration: none;}
+
+.main-content-title{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 85px;
+    padding-top: 10%;
+}
+
+#home-container{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+    width: 60%;
+    /*padding-right: 5%;
+    padding-left: 3%;
+    padding-bottom: 5%;*/
+}
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 1000px) and (min-width: 700px){
+    .sidebar{width: 30%; padding-top: 30%;}
+    /*#stick-low{ margin-top: 156%}*/
+    #redirect-btn{width: auto;}
+}
+
+@media screen and (max-width: 700px) {
+.sidebar {
+    width: 100%;
+    height: 5%;
+    padding: 0;
+    position: relative;
+}
+#stick-low{ margin-top: 0%; position: relative;}
+.sidebar a {float: left; font-size: 29px;}
+div.main-content {margin-left: 0px;}
+.main-content-title{font-size: 60px; padding-top: 0%;}
+#home-container{width: 80%;}
+#redirect-btn{
+    width: auto; 
+    display: block; 
+    margin-right: auto; 
+    margin-left: auto;
+}
+}
+
+@media screen and (max-width: 400px) {
+.sidebar a {
+    /*text-align: center;*/
+    float: none;
+}
+} 

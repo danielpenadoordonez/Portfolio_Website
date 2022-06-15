@@ -1,5 +1,3 @@
-import code
-from email.policy import default
 from django.db import models
 
 # Create your models here.
@@ -11,15 +9,21 @@ class Project(models.Model):
     frameworks = models.ManyToManyField("Framework", blank=True)
     tools = models.ManyToManyField("Tool", blank=True)
     o_Systems = models.ManyToManyField("Operating_System")
-    github_Link = models.URLField(default=None)
+    github_Link = models.URLField()
+
+    def __str__(self) -> str:
+        return self.name
 
 class Technologies(models.Model):
-    code = models.CharField(primary_key=True,max_length=15, default=True)
+    code = models.CharField(primary_key=True,max_length=15)
     name = models.CharField(max_length=50)
     description = models.TextField()
 
+    def __str__(self) -> str:
+        return self.name
+
 class Programming_Language(Technologies):
-    image = models.ImageField(upload_to='images/', default=None)
+    image = models.ImageField(upload_to='images/languages/', default=None)
 
 class Framework(Technologies):
     version = models.CharField(max_length=20)
@@ -32,4 +36,10 @@ class Operating_System(Technologies):
 
 #Additional Models 
 class Project_Images(models.Model):
-    pass
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+    image = models.ImageField(upload_to="images/projects", default=None)
+
+    def __str__(self) -> str:
+        return self.title
