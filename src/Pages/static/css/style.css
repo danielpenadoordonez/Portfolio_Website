@@ -1,26 +1,61 @@
+
+/*NAVBAR*/
 .sidebar {
     margin: 0;
-    padding-top: 15%;
-    width: 17%;
+    /*padding-top: 15%;*/
+    width: 18%;
     background-color: rgb(49, 42, 42);
     position: fixed;
     height: 100%;
     overflow: auto;
 }
 
-.sidebar a {
+.sidebar a, .drop-btn {
     display: block;
     color: rgb(23, 235, 23);
-    padding: 16px;
+    padding: 10px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
+    background-color: rgb(49, 42, 42);
+    border: none;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    text-align: left;
+    height: auto;
 }
     
 .sidebar a.active {background-color: #04AA6D;color: white;}
 
-.sidebar a:hover:not(.active) {background-color: green;color: black;}
+.sidebar a:hover:not(.active) {
+    background-color: green;
+    color: black;
+    font-weight: bolder;
+}
+
+.sidebar a i:hover:not(.active){
+    background-color: green;
+    color: black;
+    font-weight: bolder;
+}
+
+.drop-btn:hover:not(.active){
+    background-color: green;
+    color: black;
+    font-weight: bolder;
+}
 
 i p{float: right}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: inherit;
+    padding-left: 5px;
+    /*min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;*/
+}
 
 #stick-low{
     /*margin-top: 60.6%;*/
@@ -30,7 +65,9 @@ i p{float: right}
     bottom: 0;
     width: 100%;
     text-align: center;
-} 
+}
+
+/*BODY AND MAIN*/
 
 div.main-content {
     /*margin-left: 200px;*/
@@ -39,9 +76,12 @@ div.main-content {
     height: 1000px; 
 }
 
-body{background-color: rgb(250, 229, 204);}
+body{
+    background-color: rgb(202, 245, 243);
+    /*background: linear-gradient(rgb(125, 176, 185)10%, white);*/
+}
 
-#name{color: rgb(148, 148, 238);}
+#name{color: rgb(74, 74, 207);}
 
 mark{background-color: rgb(226, 226, 24);}
 
@@ -85,35 +125,51 @@ div.btn-container{ padding-top: 10%;}
 
 /*MEDIA QUERIES*/
 
+@media screen and (max-width: 1300px){
+    #redirect-btn{width: auto; }
+}
+
+@media screen and (min-height: 1000px) {
+    
+}
+
 @media screen and (max-width: 1000px) and (min-width: 700px){
-    .sidebar{width: 30%; padding-top: 30%;}
-    /*#stick-low{ margin-top: 156%}*/
-    #redirect-btn{width: auto;}
+    .sidebar{width: 30%; padding-top: 0%;}
+    #redirect-btn{
+        width: auto; 
+        display: block; 
+        margin-right: auto; 
+        margin-left: auto;
+    }
 }
 
 @media screen and (max-width: 700px) {
-.sidebar {
-    width: 100%;
-    height: 5%;
-    padding: 0;
-    position: relative;
-}
-#stick-low{ margin-top: 0%; position: relative;}
-.sidebar a {float: left; font-size: 29px;}
-div.main-content {margin-left: 0px;}
-.main-content-title{font-size: 60px; padding-top: 0%;}
-#home-container{width: 80%;}
-#redirect-btn{
-    width: auto; 
-    display: block; 
-    margin-right: auto; 
-    margin-left: auto;
-}
+    .sidebar {
+        width: 100%;
+        height: 5%;
+        padding: 0;
+        position: relative;
+    }
+    #stick-low{ margin-top: 0%; position: relative;}
+    .sidebar a {
+        float: left; 
+        font-size: 29px; 
+        width: 100%;
+    }
+    div.main-content {margin-left: 0px;}
+    .main-content-title{font-size: 60px; padding-top: 0%;}
+    #home-container{width: 80%;}
+    #redirect-btn{
+        width: auto; 
+        display: block; 
+        margin-right: auto; 
+        margin-left: auto;
+    }
 }
 
 @media screen and (max-width: 400px) {
-.sidebar a {
-    /*text-align: center;*/
-    float: none;
-}
+    .sidebar a {
+        /*text-align: center;*/
+        float: none;
+    }
 } 

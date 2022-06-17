@@ -12,16 +12,48 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
     {% block title %}
     {% endblock %}
+    <style>
+       
+    </style>
 </head>
 
 <body>
     
     <nav class="sidebar">
         <a href="http://localhost:8000/home"><i class="fa fa-home"> HOME</i></a>
-        <a href="#"><i class="fa fa-code"> Programming Languages</i></a>
-        <a href="#"><i class="fa fa-cube"> Frameworks</i></a>
-        <a href="#"><i class="fa fa-gear"> Other Tools</i></a>
-        <a href="#"><i class="fa fa-desktop"> Operating Systems</i></a>
+            
+        <button class="drop-btn">
+            <i class="fa fa-code"> Programming</i>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="#"><i class="fa fa-code"> Python</i></a>
+        </div>
+
+        <button class="drop-btn">
+            <i class="fa fa-cube"> Frameworks</i>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <i class="fa fa-cube"> Django</i>
+        </div>
+
+        <button class="drop-btn">
+            <i class="fa fa-gear"> Other Tools</i>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <i class="fa fa-gear"> Docker</i>
+        </div>
+
+        <button class="drop-btn">
+            <i class="fa fa-desktop"> Operating Systems</i>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <i class="fa fa-desktop"> Linux</i>
+        </div>
+       
         <a id="stick-low" href="http://localhost:8000/about/"><i class="fa fa-user" ></i> ABOUT ME</a>
     </nav>
 
@@ -44,6 +76,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" 
             integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" 
             crossorigin="anonymous">
+    </script>
+    <script>
+
     </script>
 </body>
 </html>
