@@ -28,6 +28,10 @@
         </button>
         <div class="dropdown-content">
             <a href="#"><i class="fa fa-code"> Python</i></a>
+            <a href="#"><i class="fa fa-code"> Java</i></a>
+            <a href="#"><i class="fa fa-code"> C#</i></a>
+            <a href="#"><i class="fa fa-code"> HTML</i></a>
+            <a href="#"><i class="fa fa-code"> SQL</i></a>
         </div>
 
         <button class="drop-btn">
@@ -35,7 +39,8 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <i class="fa fa-cube"> Django</i>
+            <a href="#"><i class="fa fa-cube"> Django</i></a>
+            <a href="#"><i class="fa fa-cube"> .NET</i></a>
         </div>
 
         <button class="drop-btn">
@@ -43,15 +48,19 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <i class="fa fa-gear"> Docker</i>
+            <a href="#"><i class="fa fa-gear"> Docker</i></a>
+            <a href="#"><i class="fa fa-gear"> Git</i></a>
+            <a href="#"><i class="fa fa-gear"> MS SQL Server</i></a>
+            <a href="#"><i class="fa fa-gear"> JSON</i></a>
         </div>
 
         <button class="drop-btn">
-            <i class="fa fa-desktop"> Operating Systems</i>
+            <i class="fa fa-desktop"> Systems</i>
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <i class="fa fa-desktop"> Linux</i>
+            <a href="#"><i class="fa fa-desktop"> Ubuntu</i></a>
+            <a href="#"><i class="fa fa-desktop"> Fedora</i></a>
         </div>
        
         <a id="stick-low" href="http://localhost:8000/about/"><i class="fa fa-user" ></i> ABOUT ME</a>
@@ -78,7 +87,21 @@
             crossorigin="anonymous">
     </script>
     <script>
-
+        var dropdownBlock = document.getElementsByClassName("drop-btn");
+        var i ;
+        for (i = 0; i < dropdownBlock.length; i++) {
+            dropdownBlock[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if(dropdownContent.style.display === "block"){
+                    dropdownContent.style.display = "none";
+                }
+                else{
+                    dropdownContent.style.display = "block";
+                }
+            });
+            
+        }
     </script>
 </body>
 </html>

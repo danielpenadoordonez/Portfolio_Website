@@ -22,39 +22,55 @@
     outline: none;
     cursor: pointer;
     text-align: left;
-    height: auto;
+    /*height: auto;*/
+    /*font-weight: bolder;*/
 }
     
 .sidebar a.active {background-color: #04AA6D;color: white;}
 
-.sidebar a:hover:not(.active) {
+.sidebar a:hover {
     background-color: green;
     color: black;
     font-weight: bolder;
 }
 
-.sidebar a i:hover:not(.active){
+.sidebar a i:hover{
     background-color: green;
     color: black;
     font-weight: bolder;
 }
 
-.drop-btn:hover:not(.active){
+.drop-btn:hover{
     background-color: green;
     color: black;
     font-weight: bolder;
 }
 
-i p{float: right}
+/*i p{float: right}*/
 
 .dropdown-content{
     display: none;
-    position: absolute;
-    background-color: inherit;
-    padding-left: 5px;
+    width: 100%;
+    font-size: 10px;
     /*min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;*/
+}
+
+.dropdown-content a{
+    font-size: 20px; 
+    background-color: rgb(61, 55, 55);
+    padding-left: 8%;
+}
+
+.dropdown-content a:hover{ background-color: rgb(100, 240, 65); }
+
+.dropdown-content a i:hover{ background-color: rgb(100, 240, 65); }
+
+.active{
+    background-color: green;
+    color: black;
+    font-weight: bolder;
 }
 
 #stick-low{
@@ -165,6 +181,7 @@ div.btn-container{ padding-top: 10%;}
         margin-right: auto; 
         margin-left: auto;
     }
+    .dropdown-content a{font-size: 20px;}
 }
 
 @media screen and (max-width: 400px) {
