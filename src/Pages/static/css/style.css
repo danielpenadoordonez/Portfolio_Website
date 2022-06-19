@@ -4,7 +4,8 @@
     margin: 0;
     /*padding-top: 15%;*/
     width: 18%;
-    background-color: rgb(49, 42, 42);
+    /*background-color: rgb(49, 42, 42);*/
+    background-color: rgb(61, 57, 57);
     position: fixed;
     height: 100%;
     overflow: auto;
@@ -16,7 +17,8 @@
     padding: 10px;
     text-decoration: none;
     font-size: 25px;
-    background-color: rgb(49, 42, 42);
+    /*background-color: rgb(49, 42, 42);*/
+    background-color: rgb(61, 57, 57);
     border: none;
     width: 100%;
     outline: none;
@@ -59,7 +61,7 @@
 
 .dropdown-content a{
     font-size: 20px; 
-    background-color: rgb(61, 55, 55);
+    background-color: rgb(87, 77, 77);
     padding-left: 8%;
 }
 
@@ -93,17 +95,21 @@ div.main-content {
 }
 
 body{
-    background-color: rgb(202, 245, 243);
-    /*background: linear-gradient(rgb(125, 176, 185)10%, white);*/
+    /*background-color: rgb(202, 245, 243);*/
+    /*background-color: rgb(209, 203, 203);*/
+    background-color: rgb(41, 35, 35);
+    color: white;
 }
 
-#name{color: rgb(74, 74, 207);}
+#name{
+    /*color: rgb(74, 74, 207);*/ 
+    color: rgb(201, 7, 7);
+}
 
 mark{background-color: rgb(226, 226, 24);}
 
 #intro {
     margin-right: 6%; 
-    margin-left: 4%;
     font-family: 'Courier New', Courier, monospace; 
     font-size: large;
     
@@ -182,6 +188,7 @@ div.btn-container{ padding-top: 10%;}
         margin-left: auto;
     }
     .dropdown-content a{font-size: 20px;}
+    #intro{margin-right: 0%;}
 }
 
 @media screen and (max-width: 400px) {
