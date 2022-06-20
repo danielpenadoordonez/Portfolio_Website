@@ -75,6 +75,16 @@
     font-weight: bolder;
 }
 
+#home-link{
+    /*background-color: rgb(6, 6, 134);*/
+    background-color: rgb(2, 109, 2);
+    color: white;
+    text-align: center;
+    top: 0%;
+}
+
+#home-link i:hover{ background-color: rgb(2, 109, 2); }
+
 #stick-low{
     /*margin-top: 60.6%;*/
     position: absolute;
@@ -97,7 +107,8 @@ div.main-content {
 body{
     /*background-color: rgb(202, 245, 243);*/
     /*background-color: rgb(209, 203, 203);*/
-    background-color: rgb(41, 35, 35);
+    /*background-color: rgb(41, 35, 35);*/
+    background-color: rgb(20, 17, 17);
     color: white;
 }
 
@@ -109,13 +120,12 @@ body{
 mark{background-color: rgb(226, 226, 24);}
 
 #intro {
-    margin-right: 6%; 
+    margin-right: 24%; 
     font-family: 'Courier New', Courier, monospace; 
     font-size: large;
-    
 }
 
-div.btn-container{ padding-top: 10%;}
+div.btn-container{ padding-top: 4%;}
 
 #redirect-btn{
     background-color: rgb(24, 161, 24);
@@ -139,10 +149,18 @@ div.btn-container{ padding-top: 10%;}
     margin-left: auto;
     margin-right: auto;
     margin-top: 7%;
-    width: 60%;
+    width: 65%;
     /*padding-right: 5%;
     padding-left: 3%;
     padding-bottom: 5%;*/
+}
+
+#logo-img{
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    border-radius: 50%;
+    width: 24%;
 }
 
 /*MEDIA QUERIES*/
@@ -179,8 +197,18 @@ div.btn-container{ padding-top: 10%;}
         width: 100%;
     }
     div.main-content {margin-left: 0px;}
-    .main-content-title{font-size: 60px; padding-top: 0%;}
-    #home-container{width: 80%;}
+    .main-content-title{font-size: 60px; padding-top: 10%;}
+    #home-container{width: 90%;}
+    /*#logo-container{padding-top: 5%; margin-top: 5%;}*/
+    #logo-img{
+        position: relative;
+        /*top: 45%; 
+        right: 15%;*/
+        width: auto;
+        margin-left: auto;
+        left: 5%;
+    }
+    .btn-container{padding-bottom: 20%;}
     #redirect-btn{
         width: auto; 
         display: block; 
