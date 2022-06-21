@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'Project',
     'Owner',
     'Pages',
-    'rest_framework'
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
