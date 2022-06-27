@@ -1,9 +1,9 @@
 from django.urls import path, include
-from .views import owner_Api_View, degree_Api_View, cert_Api_View, work_Api_View
-from rest_framework import routers
+from .views import degree_Api_View, OwnerAPIView
+# from rest_framework import routers
 
 # router = routers.DefaultRouter()
-# #router.register(r'owner', owner_View)
+# router.register(r'owner', OwnerViewSet)
 # router.register(r'degree', DegreeViewSet)
 # router.register(r'certs', CertificateViewSet)
 # router.register(r'works', WorkExperienceViewSet)
@@ -13,8 +13,6 @@ from rest_framework import routers
 
 urlpatterns = [
     #path('', include(router.urls)),
-    path('owner/', owner_Api_View),
+    path('owner/', OwnerAPIView.as_view(), name="owner-info"),
     path('degrees/', degree_Api_View),
-    path('certs/', cert_Api_View),
-    path('works/', work_Api_View)
 ]

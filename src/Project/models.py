@@ -4,6 +4,7 @@ from django.db import models
 class Project(models.Model):
     code = models.CharField(max_length=10, unique=True, primary_key=True)
     name = models.CharField(max_length=80)
+    date_Registered = models.DateField(auto_now=True)
     description = models.TextField()
     languages = models.ManyToManyField("Programming_Language")
     frameworks = models.ManyToManyField("Framework", blank=True)
