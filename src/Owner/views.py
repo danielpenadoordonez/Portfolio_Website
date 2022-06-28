@@ -11,12 +11,13 @@ from rest_framework.views import APIView
 
 class OwnerAPIView(APIView):
     """
-      Displays the owner information
+      API that displays the owner information
     """
 
     def get(self, request, format=None):
         #Dictionary with the query parameters and their values
         params:dict = request.query_params
+        #Parameter validation
         if("owner_id" not in params.keys() or "format" not in params.keys()):
             return JsonResponse({"detail" : "params required"}, safe=False, status=404)
 
@@ -26,15 +27,53 @@ class OwnerAPIView(APIView):
             raise Http404
 
         owner = Owner.objects.get(idCode=owner_ID)
-        serializer = OwnerSerializer(owner)
-        return Response(serializer.data, status=200)
+        ownerSerializer = OwnerSerializer(owner)
+        return Response(ownerSerializer.data, status=200)
 
 
+class DegreeAPIView(APIView):
+    """
+       API that diplays all the degrees with their information
+    """
 
-@api_view(['GET'])
-def degree_Api_View(request:HttpRequest):
-    if request.method == "GET":
+    def get(self, request, format=None):
+        #Query parameters
+        params:dict = request.query_params
+        if("format" not in params.keys()):
+            return JsonResponse({"detail" : "params required"}, safe=False, status=404)
+
         degrees = Degree.objects.all()
-        serializer = DegreeSerializer(degrees, many=True)
-        #return Response(serializer.data)
-        return JsonResponse(serializer.data, safe=False, status=200)
+        degreeSerializer = DegreeSerializer(degrees, many=True)
+        return Response(degreeSerializer.data, status=200)
+
+
+class CertificateAPIView(APIView):
+    """
+      API that displays Certificates
+    """
+
+    def get(self, request, format=None):
+        #Query parameters
+        params:dict = request.query_params
+        if("format" not in params.keys()):
+            return JsonResponse({"detail" : "params required"}, safe=False, status=404)
+
+        certs = Certificate.objects.all()
+        certSerializer = CertificateSerializer(certs, many=True)
+        return Response(certSerializer.data, status=200)
+
+
+class WorkAPIView(APIView):
+    """
+    API that displays job information
+    """
+    
+    def get(self, request, format=None):
+        #Query parameters
+        params:dict = request.query_params
+        if("format" not in params.keys()):
+            return JsonResponse({"detail" : "params required"}, safe=False, status=404)
+
+        jobs = Work_Experience.objects.all()
+        jobsSerializer = WorkExperienceSerializer(jobs, many=True)
+        return Response(jobsSerializer.data, status=200)
