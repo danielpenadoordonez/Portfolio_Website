@@ -4,8 +4,8 @@
     margin: 0;
     /*padding-top: 15%;*/
     width: 18%;
-    /*background-color: rgb(49, 42, 42);*/
-    background-color: rgb(61, 57, 57);
+    /*background-color: rgb(61, 57, 57);*/
+    background-color: rgb(46, 41, 41);
     position: fixed;
     height: 100%;
     overflow: auto;
@@ -17,8 +17,9 @@
     padding: 10px;
     text-decoration: none;
     font-size: 25px;
-    /*background-color: rgb(49, 42, 42);*/
-    background-color: rgb(61, 57, 57);
+    /*background-color: rgb(49, 42, 42);
+    background-color: rgb(61, 57, 57);*/
+    background-color: rgb(46, 41, 41);
     border: none;
     width: 100%;
     outline: none;
@@ -125,9 +126,14 @@ mark{background-color: rgb(226, 226, 24);}
     font-size: large;
 }
 
-div.btn-container{ padding-top: 4%;}
+div.btn-container{ padding-top: 4%; display: flex; justify-content: space-between;}
 
-#redirect-btn{
+
+.btn-container > #linkd-btn{
+    margin-right: 55%;
+}
+
+#git-btn{
     background-color: rgb(24, 161, 24);
     width: 20%;
     height: 50px;
@@ -135,7 +141,16 @@ div.btn-container{ padding-top: 4%;}
     font-size: larger;
 }
 
-#redirect-btn a{color: black; text-decoration: none;}
+#linkd-btn{
+    background-color: rgb(40, 88, 161);
+    width: 20%;
+    height: 50px;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+#git-btn a{color: black; text-decoration: none;}
+#linkd-btn a{color: black; text-decoration: none;}
 
 .main-content-title{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -144,15 +159,35 @@ div.btn-container{ padding-top: 4%;}
     padding-top: 10%;
 }
 
+.main-title{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 85px;
+}
+
+.subtitle{
+    color: rgb(19, 136, 172);
+    font-weight: bolder;
+}
+
 #home-container{
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 7%;
     width: 65%;
-    /*padding-right: 5%;
-    padding-left: 3%;
-    padding-bottom: 5%;*/
+}
+
+.page-container{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+ul{
+    list-style: square;
+    font-size: large;
 }
 
 #logo-img{
@@ -166,23 +201,35 @@ div.btn-container{ padding-top: 4%;}
 /*MEDIA QUERIES*/
 
 @media screen and (max-width: 1300px){
-    #redirect-btn{width: auto; }
+    #git-btn{width: auto; }
+    #linkd-btn{width: auto; }
 }
 
 @media screen and (min-height: 1000px) {
     
 }
 
+/*Tablets*/
 @media screen and (max-width: 1000px) and (min-width: 700px){
     .sidebar{width: 30%; padding-top: 0%;}
-    #redirect-btn{
+    #git-btn{
         width: auto; 
         display: block; 
         margin-right: auto; 
         margin-left: auto;
     }
+    #linkd-btn{
+        width: auto; 
+        display: block; 
+        margin-right: auto; 
+        margin-left: auto;
+    }
+    .btn-container > #linkd-btn{
+        margin-right: 15%;
+    }
 }
 
+/*Phones*/
 @media screen and (max-width: 700px) {
     .sidebar {
         width: 100%;
@@ -199,6 +246,7 @@ div.btn-container{ padding-top: 4%;}
     div.main-content {margin-left: 0px;}
     .main-content-title{font-size: 60px; padding-top: 10%;}
     #home-container{width: 90%;}
+    .page-container{width: 90%;}
     /*#logo-container{padding-top: 5%; margin-top: 5%;}*/
     #logo-img{
         position: relative;
@@ -209,11 +257,14 @@ div.btn-container{ padding-top: 4%;}
         left: 5%;
     }
     .btn-container{padding-bottom: 20%;}
-    #redirect-btn{
+    #git-btn{
+        width: auto;
+    }
+    #linkd-btn{
         width: auto; 
-        display: block; 
-        margin-right: auto; 
-        margin-left: auto;
+    }
+    .btn-container > #linkd-btn{
+        margin-right: 5%;
     }
     .dropdown-content a{font-size: 20px;}
     #intro{margin-right: 0%;}

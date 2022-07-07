@@ -1,1 +1,29 @@
 {% extends 'base.html' %}
+
+{% block title %}
+<title>About</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="page-container">
+    <h1 class="main-title"><b id="name">{{owner.name}} {{owner.lastName}}</b></h1>
+    <br>
+    <p id="intro">{{owner.description}}</p>
+    <br>
+    <h3 class="subtitle">My Skills Include</h3>
+    <ul>
+        {% for skill in owner.skills %}
+        <li>{{skill}}</li>
+        {% endfor %}
+    </ul>
+    <div class="btn-container">
+        <button class="btn btn-succces" id="git-btn">
+            <a href="{{owner.github_Account}}" target="_blank">My GitHub</a>
+        </button>
+        <button class="btn btn-succces" id="linkd-btn">
+            <a href="{{owner.linkedin_Profile}}" target="_blank">LinkedIn Profile</a>
+        </button>
+    </div>
+</div>
+{% endblock %}
