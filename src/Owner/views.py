@@ -3,11 +3,13 @@ from django.http import HttpRequest, JsonResponse, Http404
 #from .forms import OwnerForm
 from .models import Owner, Degree, Certificate, Work_Experience
 from .serializers import OwnerSerializer, DegreeSerializer, CertificateSerializer, WorkExperienceSerializer
+from .services import OwnerService
 from rest_framework import viewsets, status, generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+OWNER_SERVICE = OwnerService()
 
 class OwnerAPIView(APIView):
     """
@@ -43,6 +45,8 @@ class DegreeAPIView(APIView):
             return JsonResponse({"detail" : "params required"}, safe=False, status=404)
 
         degrees = Degree.objects.all()
+        #Filter the response to get only the degrees
+        degrees = OWNER_SERVICE.getFilteredDegrees(degrees)
         degreeSerializer = DegreeSerializer(degrees, many=True)
         return Response(degreeSerializer.data, status=200)
 

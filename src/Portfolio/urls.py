@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 #from Owner.views import home_Page_View
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Pages.urls')),
     path('api/', include('Owner.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #For serving files uploaded to MEDIA

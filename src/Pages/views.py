@@ -20,4 +20,5 @@ def about_View(request:HttpRequest, *args, **kwargs):
         data = {'status', '404'}
 
     #context = data
+
     return render(request, 'Pages/about.html', data)
