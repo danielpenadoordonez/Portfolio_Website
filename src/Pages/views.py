@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpRequest, Http404
 from .services import PageServices
 import json
+import logging
 
 API_SERVICE = PageServices()
 
@@ -17,8 +18,11 @@ def about_View(request:HttpRequest, *args, **kwargs):
         #Get the data from the API
         data = API_SERVICE.get_Owner_Info(objects=objects)
     except Http404:
-        data = {'status', '404'}
-
-    #context = data
+        data = {'status' : '404'}
+    except json.JSONDecodeError:
+        data = {'status' : 'no data'}
 
     return render(request, 'Pages/about.html', data)
+
+def all_Projects_View(request:HttpRequest, *args, **kwargs):
+    return render(request, 'Pages/allProjects.html', {})

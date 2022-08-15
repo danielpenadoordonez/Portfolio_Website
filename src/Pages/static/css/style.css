@@ -3,9 +3,9 @@
 .sidebar {
     margin: 0;
     /*padding-top: 15%;*/
-    width: 18%;
+    width: 15%;
     /*background-color: rgb(61, 57, 57);*/
-    background-color: rgb(46, 41, 41);
+    background-color: rgb(37, 32, 32);
     position: fixed;
     height: 100%;
     overflow: auto;
@@ -16,10 +16,10 @@
     color: rgb(23, 235, 23);
     padding: 10px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     /*background-color: rgb(49, 42, 42);
     background-color: rgb(61, 57, 57);*/
-    background-color: rgb(46, 41, 41);
+    background-color: rgb(37, 32, 32);
     border: none;
     width: 100%;
     outline: none;
@@ -62,7 +62,7 @@
 
 .dropdown-content a{
     font-size: 20px; 
-    background-color: rgb(87, 77, 77);
+    background-color: rgb(58, 50, 50);
     padding-left: 8%;
 }
 
@@ -281,6 +281,7 @@ ul{
         left: 5%;
     }
     .btn-container{padding-bottom: 20%;}
+    .degree-container{width: 100%;}
     #git-btn{
         width: auto;
     }
@@ -288,7 +289,14 @@ ul{
         width: auto; 
     }
     .btn-container > #linkd-btn{
-        margin-right: 5%;
+        margin-right: 10%;
+        width: auto;
+        height: auto;
+    }
+    .btn-container > #git-btn{
+        margin-right: 10%;
+        width: auto;
+        height: auto;
     }
     .dropdown-content a{font-size: 20px;}
     #intro{margin-right: 0%;}

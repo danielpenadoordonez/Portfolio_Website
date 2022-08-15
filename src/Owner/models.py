@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.db import models
 
 # Create your models here.
@@ -20,8 +21,9 @@ class Degree(models.Model):
     description = models.TextField()
     institution = models.CharField(max_length=60)
     file = models.FileField(upload_to="docs/degrees", max_length=100, blank=True)
+    image = models.ImageField(upload_to='images/degrees', blank=True)
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
-
+    
     def __str__(self) -> str:
         return f"{self.title} at {self.institution}"
 

@@ -10,6 +10,7 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="icon" href="{% static 'images/Logo1.png' %}" type="image/png" />
     {% block title %}
     {% endblock %}
     <style>
@@ -20,8 +21,10 @@
 <body>
     
     <nav class="sidebar">
-        <a href="http://localhost:8000/home" id="home-link"><i class="fa fa-home" > HOME</i></a>
-            
+        <a href="/home/" id="home-link"><i class="fa fa-home" > HOME</i></a>
+        
+        <a href="/projects/"><i class="fa fa-list" > All Projects</i></a>
+
         <button class="drop-btn">
             <i class="fa fa-code"> Programming</i>
             <i class="fa fa-caret-down"></i>
@@ -54,16 +57,16 @@
             <a href="#"><i class="fa fa-gear"> JSON</i></a>
         </div>
 
-        <button class="drop-btn">
+        <!-- <button class="drop-btn">
             <i class="fa fa-desktop"> Systems</i>
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
             <a href="#"><i class="fa fa-desktop"> Ubuntu</i></a>
             <a href="#"><i class="fa fa-desktop"> Fedora</i></a>
-        </div>
+        </div> -->
        
-        <a id="stick-low" href="http://localhost:8000/about/"><i class="fa fa-user" ></i> ABOUT ME</a>
+        <a id="stick-low" href="/about/"><i class="fa fa-user" ></i> ABOUT ME</a>
     </nav>
 
     <div class="main-content">

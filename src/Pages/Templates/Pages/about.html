@@ -7,61 +7,69 @@
 
 {% block content %}
 <div class="page-container">
-    <h1 class="main-title"><b id="name">{{owner.name}} {{owner.lastName}}</b></h1>
-    <br>
-    <p id="intro">{{owner.description}}</p>
-    <p id="intro">
-        If you want to check my <mark><b>Github Account</b></mark> or <mark><b>LinkedIn Profile</b></mark>, scroll down
-        and click on the respective button.
-    </p>
-    <br>
-    <h3 class="subtitle">My Skills Include</h3>
-    <ul>
-        {% for skill in owner.skills %}
-        <li>{{skill}}</li>
-        {% endfor %}
-    </ul>
-    <br>
+    {% if not status == 'no data' and not status == '404'%}
+        <h1 class="main-title">ABOUT <b id="name">{{owner.name}} {{owner.lastName}}</b></h1>
+        <br>
+        <p id="intro">{{owner.description}}</p>
+        <p id="intro">
+            If you want to check my <mark><b>Github Account</b></mark> or <mark><b>LinkedIn Profile</b></mark>, scroll down
+            and click on the respective button.
+        </p>
+        <br>
+        {% if owner.skills|length > 0 %}
+            <h3 class="subtitle">My Skills Include</h3>
+            <ul>
+                {% for skill in owner.skills %}
+                <li>{{skill}}</li>
+                {% endfor %}
+            </ul>
+            <br>
+        {% endif%}
 
-    {% if degrees|length > 0 %}
-        <h3 class="subtitle">My Degrees</h3>
-        <br>
-        {% for degree in degrees %}
-        <div class="degree-container">
-            <h2 style="text-align: center;">{{degree.title}}</h2>
-            <hr>
-            <p>{{degree.description}}</p>
-            <p><b>Institution:</b> {{degree.institution}}</p>
-            <a href="{{degree.file}}" target="_blank" id="file-link">View Degree</a>
+        {% if degrees|length > 0 %}
+            <h3 class="subtitle">My Degrees</h3>
+            <br>
+            {% for degree in degrees %}
+            <div class="degree-container">
+                <h2 style="text-align: center;">{{degree.title}}</h2>
+                <hr>
+                <p>{{degree.description}}</p>
+                <p><b>Institution:</b> {{degree.institution}}</p>
+                <a href="{{degree.file}}" target="_blank" id="file-link">View Degree <i class="fa fa-download"></i></a>
+            </div>
+            <br>
+            <br>
+            {% endfor %}
+        {% endif %}
+
+        {% if certs|length > 0 %}
+            <h3 class="subtitle">My Certifications</h3>
+            <br>
+            {% for cert in certs %}
+            <div class="degree-container">
+                <h2 style="text-align: center;">{{cert.title}}</h2>
+                <hr>
+                <p>{{cert.description}}</p>
+                <p><b>Institution:</b> {{cert.institution}}</p>
+                <a href="{{cert.file}}" target="_blank" id="file-link" style="background-color: rgb(238, 238, 11);">View Certification <i class="fa fa-download"></i></a>
+            </div>
+            <br>
+            <br>
+            {% endfor %}
+        {% endif %}
+
+        <div class="btn-container" style="margin-left: 20%;">
+            <button class="btn btn-succces" id="git-btn">
+                <a href="{{owner.github_Account}}" target="_blank"><i class="fa fa-github"></i> My GitHub</a>
+            </button>
+            <button class="btn btn-succces" id="linkd-btn" style="width: auto;">
+                <a href="{{owner.linkedin_Profile}}" target="_blank"><i class="fa fa-linkedin"></i> My LinkedIn</a>
+            </button>
         </div>
-        <br>
-        <br>
-        {% endfor %}
     {% endif %}
 
-    {% if certs|length > 0 %}
-        <h3 class="subtitle">My Certifications</h3>
-        <br>
-        {% for cert in certs %}
-        <div class="degree-container">
-            <h2 style="text-align: center;">{{cert.title}}</h2>
-            <hr>
-            <p>{{cert.description}}</p>
-            <p><b>Institution:</b> {{cert.institution}}</p>
-            <a href="{{cert.file}}" target="_blank" id="file-link" style="background-color: rgb(238, 238, 11);">View Certification</a>
-        </div>
-        <br>
-        <br>
-        {% endfor %}
+    {% if status == 'no data' or status == '404'%}
+        <h1 class="main-title">No Data to Display</h1>
     {% endif %}
-
-    <div class="btn-container">
-        <button class="btn btn-succces" id="git-btn">
-            <a href="{{owner.github_Account}}" target="_blank">My GitHub</a>
-        </button>
-        <button class="btn btn-succces" id="linkd-btn">
-            <a href="{{owner.linkedin_Profile}}" target="_blank">LinkedIn Profile</a>
-        </button>
-    </div>
 </div>
 {% endblock %}
