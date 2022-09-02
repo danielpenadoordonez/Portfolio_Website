@@ -200,6 +200,7 @@ div.btn-container{ padding-top: 4%; display: flex; justify-content: space-betwee
     padding-left: 0%;
     height: 40px;
     text-align: center;
+    margin-top: 12%;
 }
 
 .page-container{
@@ -214,6 +215,7 @@ ul{
     font-size: large;
 }
 
+/*IMAGES*/
 #logo-img{
     position: absolute;
     top: 3%;
@@ -221,7 +223,14 @@ ul{
     border-radius: 50%;
     width: 24%;
 }
-
+.degree-img{
+    float: left;
+    width: 25%;
+    height: fit-content;
+    margin-right: 3%;
+    margin-left: 1%;
+    margin-bottom: auto;
+}
 /*MEDIA QUERIES*/
 
 @media screen and (max-width: 1300px){
@@ -236,21 +245,27 @@ ul{
 /*Tablets*/
 @media screen and (max-width: 1000px) and (min-width: 700px){
     .sidebar{width: 30%; padding-top: 0%;}
+    .degree-container{width: 100%;}
     #git-btn{
         width: auto; 
-        display: block; 
+        height: auto;
         margin-right: auto; 
         margin-left: auto;
     }
     #linkd-btn{
         width: auto; 
-        display: block; 
+        height: auto;
         margin-right: auto; 
         margin-left: auto;
     }
     .btn-container > #linkd-btn{
         margin-right: 15%;
     }
+    .btn-container > #git-btn{
+        margin-right: 15%;
+    }
+    .degree-img{height: 140px; width: 40%;}
+    #file-link{margin-top: 6%;}
 }
 
 /*Phones*/
@@ -289,17 +304,19 @@ ul{
         width: auto; 
     }
     .btn-container > #linkd-btn{
-        margin-right: 10%;
+        margin-right: 15%;
         width: auto;
         height: auto;
     }
     .btn-container > #git-btn{
-        margin-right: 10%;
+        margin-right: 15%;
         width: auto;
         height: auto;
     }
     .dropdown-content a{font-size: 20px;}
     #intro{margin-right: 0%;}
+    .degree-img{height: 140px; width: 40%;}
+    #file-link{margin-top: 6%;}
 }
 
 @media screen and (max-width: 400px) {

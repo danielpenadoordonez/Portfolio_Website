@@ -3,7 +3,7 @@ from django.http import Http404
 
 class PageServices():
 
-    BASE_URL = 'http://localhost:8000/api'
+    BASE_URL = 'http://localhost:8080/api'
 
     def get_Owner_Info(self, objects:list) -> dict:
         response = dict()

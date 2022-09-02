@@ -24,6 +24,7 @@ class DegreeSerializer(serializers.ModelSerializer):
             'description',
             'institution',
             'file',
+            'image',
             'owner'
         )
 
@@ -36,6 +37,7 @@ class CertificateSerializer(serializers.ModelSerializer):
             'description',
             'institution',
             'file',
+            'image',
             'owner',
             'cert_Link'
         )
