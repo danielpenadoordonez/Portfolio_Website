@@ -30,11 +30,9 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="#"><i class="fa fa-code"> Python</i></a>
-            <a href="#"><i class="fa fa-code"> Java</i></a>
-            <a href="#"><i class="fa fa-code"> C#</i></a>
-            <a href="#"><i class="fa fa-code"> HTML</i></a>
-            <a href="#"><i class="fa fa-code"> SQL</i></a>
+            {% for lang in tech_Types.languages %}
+                <a href="#"><i class="fa fa-code"> {{lang}}</i></a>
+            {% endfor %}
         </div>
 
         <button class="drop-btn">
@@ -42,8 +40,9 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="#"><i class="fa fa-cube"> Django</i></a>
-            <a href="#"><i class="fa fa-cube"> .NET</i></a>
+            {% for frm in tech_Types.frameworks %}
+                <a href="#"><i class="fa fa-cube"> {{frm}}</i></a>
+            {% endfor %}
         </div>
 
         <button class="drop-btn">
@@ -51,20 +50,10 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="#"><i class="fa fa-gear"> Docker</i></a>
-            <a href="#"><i class="fa fa-gear"> Git</i></a>
-            <a href="#"><i class="fa fa-gear"> MS SQL Server</i></a>
-            <a href="#"><i class="fa fa-gear"> JSON</i></a>
+            {% for tool in tech_Types.tools %}
+                <a href="#"><i class="fa fa-gear"> {{tool}}</i></a>
+            {% endfor %}
         </div>
-
-        <!-- <button class="drop-btn">
-            <i class="fa fa-desktop"> Systems</i>
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="#"><i class="fa fa-desktop"> Ubuntu</i></a>
-            <a href="#"><i class="fa fa-desktop"> Fedora</i></a>
-        </div> -->
        
         <a id="stick-low" href="/about/"><i class="fa fa-user" ></i> ABOUT ME</a>
     </nav>
