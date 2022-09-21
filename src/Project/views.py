@@ -23,6 +23,13 @@ class ProjectAPIView(APIView):
         if "tech" in params.keys():
             tech_Requested = params.get("tech")
 
+        #Check if a specific project is requested
+        if "proj" in params.keys():
+            proj_Id = params.get("proj")
+            project_Requested = Project.objects.get(code=proj_Id)
+            projectSerializer = ProjectSerializer(project_Requested)
+            return Response(projectSerializer.data, status=200)
+
         projects = Project.objects.all()
         projectSerializer = ProjectSerializer(projects, many=True)
         return Response(projectSerializer.data, status=200)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project, Technologies, Programming_Language, Framework, Tool, Operating_System, Project_Images
+from .models import Project, Technologies, Programming_Language, Framework, Tool, Project_Images
 
 # Register your models here.
 @admin.register(Project)
@@ -20,10 +20,6 @@ class FrameworkAdmin(admin.ModelAdmin):
 
 @admin.register(Tool)
 class ToolAdmin(admin.ModelAdmin):
-    pass
-
-@admin.register(Operating_System)
-class OSAdmin(admin.ModelAdmin):
     pass
 
 @admin.register(Project_Images)

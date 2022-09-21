@@ -6,6 +6,25 @@
 
 {% block content %}
 <div class="page-container">
-    <h1 class="main-title">My Projects</h1>
+    {% if not status == 'no data' and not status == '404'%}
+    {% if projects|length > 0 %}
+        <h1 class="main-title">My Projects</h1>
+        <br>
+        {% for project in projects %}
+        <div class="proj-container">
+            <h1 id="name" style="padding-left: 1%;">{{project.name}}</h1>
+            <hr>
+            <p>{{project.description}}</p>
+            <a href="/project/{{project.code}}" id="proj-link">View <i class="fa fa-search"></i></a>
+        </div>
+        <br>
+        <br>
+        {% endfor%}
+    {% endif %}
+    {% endif %}
+
+    {% if status == 'no data' or status == '404' or projects|length == 0 %}
+        <h1 class="main-title">No Projects to Display</h1>
+    {% endif %}
 </div>
 {% endblock %}
