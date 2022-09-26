@@ -5,7 +5,8 @@
     /*padding-top: 15%;*/
     width: 15%;
     /*background-color: rgb(61, 57, 57);*/
-    background-color: rgb(37, 32, 32);
+    /*background-color: rgb(37, 32, 32);*/
+    background-color: rgb(17, 15, 15);
     position: fixed;
     height: 100%;
     overflow: auto;
@@ -19,7 +20,7 @@
     font-size: 20px;
     /*background-color: rgb(49, 42, 42);
     background-color: rgb(61, 57, 57);*/
-    background-color: rgb(37, 32, 32);
+    background-color: rgb(17, 15, 15);
     border: none;
     width: 100%;
     outline: none;
@@ -62,7 +63,8 @@
 
 .dropdown-content a{
     font-size: 20px; 
-    background-color: rgb(58, 50, 50);
+    /* background-color: rgb(58, 50, 50); */
+    background-color: rgb(37, 32, 32);
     padding-left: 8%;
 }
 

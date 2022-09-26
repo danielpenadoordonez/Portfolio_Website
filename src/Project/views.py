@@ -6,7 +6,9 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import ProjectSerializer, TechnologySerializer, ProjectImagesSerializer
+from .services import ProjectService
 
+PROJECT_SERVICE = ProjectService()
 
 class ProjectAPIView(APIView):
     """
@@ -46,9 +48,17 @@ class TechnologyAPIView(APIView):
         if "format" not in params.keys():
             return JsonResponse({"detail" : "format required"})
 
-        technologies = Technologies.objects.all()
-        techSerializer = TechnologySerializer(technologies, many=True)
-        return Response(techSerializer.data, status=200)
+        langs, frameworks, tools = PROJECT_SERVICE.get_All_Technologies()
+        langSerializer = TechnologySerializer(langs, many=True)
+        frameworkSerializer = TechnologySerializer(frameworks, many=True)
+        toolSerializer = TechnologySerializer(tools, many=True)
+
+        response = {
+            "langs" : langSerializer.data,
+            "frameworks" : frameworkSerializer.data,
+            "tools" : toolSerializer.data
+        }
+        return Response(response, status=200)
 
 
 class ProjectImagesAPIView(APIView):

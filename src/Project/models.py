@@ -10,13 +10,14 @@ class Project(models.Model):
     frameworks = models.ManyToManyField("Framework", blank=True)
     tools = models.ManyToManyField("Tool", blank=True)
     github_Link = models.URLField()
+    main_Image = models.ImageField(upload_to='images/languages/', default=None, null=True)
 
     def __str__(self) -> str:
         return self.name
 
 class Technologies(models.Model):
     code = models.CharField(max_length=15, unique=True)
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
     description = models.TextField()
     image = models.ImageField(upload_to='images/languages/', default=None, blank=True)
     version = models.CharField(max_length=20)
@@ -35,7 +36,7 @@ class Tool(Technologies):
 
 #Additional Models 
 class Project_Images(models.Model):
-    imgCode = models.CharField(max_length=12, unique=True)
+    imgCode = models.CharField(max_length=12, unique=True, primary_key=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     description = models.TextField(blank=True)

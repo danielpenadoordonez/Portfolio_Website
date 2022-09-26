@@ -12,7 +12,8 @@ class ProjectSerializer(serializers.ModelSerializer):
             'languages',
             'frameworks',
             'tools',
-            'github_Link'
+            'github_Link',
+            'main_Image'
         )
 
 class TechnologySerializer(serializers.ModelSerializer):
