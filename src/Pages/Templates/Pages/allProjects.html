@@ -12,12 +12,13 @@
         <br>
         {% for project in projects %}
         <div class="proj-container">
-            <h1 id="name" style="padding-left: 1%;">{{project.name}}</h1>
-            <hr>
-            <p>{{project.description}}</p>
-            <a href="/project/{{project.code}}" id="proj-link">View <i class="fa fa-search"></i></a>
-        </div>
-        <br>
+            <div class="project-gallery">
+              <a href="/project/{{project.code}}">
+                <img src="{{project.main_Image}}">
+              </a>
+              <a href="/project/{{project.code}}" id="proj-link">{{project.name}} <i class="fa fa-project"></i></a>
+            </div>
+          </div>
         <br>
         {% endfor%}
     {% endif %}
@@ -28,3 +29,4 @@
     {% endif %}
 </div>
 {% endblock %}
+
